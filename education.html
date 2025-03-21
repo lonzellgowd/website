@@ -11,8 +11,8 @@
         /* Kyle Thomas's Style */
         body {
             font-family: "Roboto Mono", monospace;
-            background-color: #e8e8e8; /* Original background color */
-            color: rgba(0, 0, 0, 0.85); /* Dark text for light background */
+            background-color: #e8e8e8;
+            color: rgba(0, 0, 0, 0.85);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,7 +22,7 @@
             padding: 20px;
             text-align: center;
             position: relative;
-            overflow: hidden; /* Hide overflowing binary numbers */
+            overflow: hidden;
         }
         h1 {
             font-family: "IBM Plex Mono", monospace;
@@ -30,20 +30,20 @@
             font-weight: 200;
             margin: 0;
             line-height: 1.1;
-            color: rgba(0, 0, 0, 0.85); /* Dark text for light background */
+            color: rgba(0, 0, 0, 0.85);
         }
         h2 {
             font-family: "IBM Plex Mono", monospace;
             font-size: 2.7rem;
             font-weight: 350;
             margin: 20px 0 10px;
-            color: rgba(0, 0, 0, 0.85); /* Dark text for light background */
+            color: rgba(0, 0, 0, 0.85);
         }
         p, ul {
             font-family: "Roboto Mono", monospace;
             font-size: 1.6rem;
             font-weight: 400;
-            color: rgba(0, 0, 0, 0.85); /* Dark text for light background */
+            color: rgba(0, 0, 0, 0.85);
             margin: 5px 0;
             text-align: center;
         }
@@ -55,10 +55,11 @@
             margin-bottom: 10px;
         }
         a {
-            color: rgba(0, 0, 0, 0.85); /* Dark text for light background */
+            color: rgba(0, 0, 0, 0.85);
             text-decoration: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Dark border for light background */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
             display: inline-block;
+            transition: opacity 0.3s ease;
         }
         a:hover {
             opacity: 0.7;
@@ -83,7 +84,7 @@
             top: -50px;
             font-family: "IBM Plex Mono", monospace;
             font-size: 1.2rem;
-            color: rgba(0, 0, 0, 0.3); /* Light gray binary numbers for subtle effect */
+            color: rgba(0, 0, 0, 0.3); /* Light gray binary numbers */
             animation: fall 5s linear forwards; /* Animation lasts 5 seconds */
         }
 
@@ -101,6 +102,39 @@
                 opacity: 0; /* Fade out at the bottom */
             }
         }
+
+        /* Interactive Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .timeline-item {
+            position: relative;
+            width: 80%;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body>
@@ -111,10 +145,15 @@
 
     <!-- Education Content -->
     <h1>EDUCATION</h1>
-    <p><strong>TEXAS STATE UNIVERSITY</strong> - San Marcos, TX</p>
-    <p>Bachelor of Business Administration in Computer Information Systems</p>
-    <p>GPA: 3.0 | Expected Graduation: Dec 2025</p>
-    <p><strong>Relevant Coursework:</strong> Data Analysis, Python Programming, Information Systems Security, Network Architecture & Data Communication, HTML/CSS/JavaScript/SQL</p>
+    <div class="timeline">
+        <div class="timeline-item">
+            <p><strong>TEXAS STATE UNIVERSITY</strong></p>
+            <p>San Marcos, TX</p>
+            <p>Bachelor of Business Administration in Computer Information Systems</p>
+            <p>GPA: 3.0 | Expected Graduation: Dec 2025</p>
+            <p><strong>Relevant Coursework:</strong> Data Analysis, Python Programming, Information Systems Security, Network Architecture & Data Communication, HTML/CSS/JavaScript/SQL</p>
+        </div>
+    </div>
 
     <a href="index.html" class="back-link">← Back to Main Page</a>
 
