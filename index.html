@@ -7,6 +7,8 @@
     <!-- Load Custom Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!-- Load Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         /* Kyle Thomas's Style */
         body {
@@ -125,6 +127,13 @@
         }
         setInterval(updateClock, 1000);
         updateClock();
+
+        // Trigger Confetti on Page Load
+        confetti({
+            particleCount: 100, // Number of confetti pieces
+            spread: 70, // Spread of confetti
+            origin: { y: 0.6 } // Start from the top
+        });
     </script>
 </body>
 </html>
